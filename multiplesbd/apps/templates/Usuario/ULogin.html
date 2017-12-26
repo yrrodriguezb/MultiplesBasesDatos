@@ -1,0 +1,42 @@
+{% extends "../master.html" %}
+
+{% block style %}
+<style type="text/css">
+body {
+  background: #eee !important;
+}
+</style>
+{% endblock %}
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+   <form class="form-signin" method="POST">
+     {% csrf_token %}
+
+     <div class="form-group text-center">
+      <h2 class="form-signin-heading">Ingreso a la aplicación</h2>
+     </div>
+
+     <div class="form-group">
+      <input type="text" class="form-control" name="username" placeholder="Nombre de Usuario" required="" autofocus="" />
+     </div>
+
+     <div class="form-group">
+      <input type="password" class="form-control" name="password" placeholder="Contraseña" required=""/>
+     </div>
+
+     <div class="form-group">
+      <button class="btn btn-md btn-primary btn-block" type="submit">Ingresar</button>
+     </div>
+
+     <div class="form-group text-center">
+      <a href="{% url 'index' %}" class="btn btn-md btn-primary btn-block" role="button">Regresar</a>
+     </div>
+
+   </form>
+ </div>
+{% endblock %}
